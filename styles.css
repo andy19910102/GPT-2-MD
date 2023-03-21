@@ -18,12 +18,19 @@ footer {
     margin: 0 auto;
 }
 
+#mainSection p {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
 #mainSection {
+    padding: 0px 20px;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(45deg, #f7f8f8, #eefaf9);
+    background: linear-gradient(-135deg, #f7f8f8, #d7f9f7);
 }
 
 #mainSection h1 {
@@ -43,6 +50,7 @@ footer p {
     margin: 0px;
 }
 
+#mainSection a,
 footer p a {
     color: #333;
 }
@@ -100,7 +108,7 @@ footer p a {
     transition: none;
     box-shadow: 0px 25px 20px -5px #34294434,
         0px 20px 30px -10px #af1af93d,
-        0px 0px 0px 7px #cb1fff5e;
+        0px 0px 0px 8px #cb1fff5e;
 }
 
 #downloadBtn:hover:after {
