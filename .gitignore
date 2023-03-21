@@ -1,0 +1,27 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore .DS_Store files (Mac specific)
+.DS_Store
+
+# Ignore temporary files
+*.swp
+*.swo
+*.swn
+
+# Ignore build output files
+/dist/
+/build/
+/out/
+/.next/
+
+# Ignore dependency lock files
+yarn.lock
+package-lock.json
+
+# Ignore IDE configuration files
+.idea/
+.vscode/

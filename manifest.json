@@ -1,0 +1,15 @@
+{
+    "name": "GPT2MD",
+    "version": "1.0.0",
+    "description": "Turn ChatGPT history into markdown",
+    "manifest_version": 3,
+    "author": "Huang An Sheng",
+    "icons": {
+        "128": "images/icon.png"
+    },
+    "action": {
+        "default_icon": "images/icon.png",
+        "default_popup": "index.html",
+        "default_title": "GPT2MD"
+    }
+}
