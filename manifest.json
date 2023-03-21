@@ -4,12 +4,30 @@
     "description": "Turn ChatGPT history into markdown",
     "manifest_version": 3,
     "author": "Huang An Sheng",
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "downloads"
+    ],
     "icons": {
         "128": "images/icon.png"
     },
     "action": {
         "default_icon": "images/icon.png",
-        "default_popup": "index.html",
+        "default_popup": "popup.html",
         "default_title": "GPT2MD"
-    }
+    },
+    "background": {
+        "service_worker": "backgroundScript.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://chat.openai.com/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ]
 }
