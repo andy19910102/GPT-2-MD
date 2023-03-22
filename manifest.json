@@ -19,15 +19,5 @@
     },
     "background": {
         "service_worker": "backgroundScript.js"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://chat.openai.com/*"
-            ],
-            "js": [
-                "contentScript.js"
-            ]
-        }
-    ]
+    }
 }
