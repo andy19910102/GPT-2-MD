@@ -1,6 +1,6 @@
 {
     "name": "GPT2MD",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "description": "Turn ChatGPT history into markdown",
     "manifest_version": 3,
     "author": "Huang An Sheng",

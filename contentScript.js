@@ -13,7 +13,7 @@ function extractText(inputDOM) {
     return doc.innerText.trim();
 }
 
-function downloadMarkdown(conversation) {
+function downloadMarkdown(conversation, title) {
     const markdownContent = conversation
         .map((entry) => {
             const content = extractText(entry.content);
@@ -24,7 +24,8 @@ function downloadMarkdown(conversation) {
     const blob = new Blob([markdownContent], { type: 'text/markdown;charset=utf-8' });
     // 下載檔案
     const url = URL.createObjectURL(blob);
-    const fileName = `GPT2MD.md`;
+    const reconstructedTitle = title.replace(/[^\u4e00-\u9fa5a-zA-Z0-9 ]/g, '');
+    const fileName = `${reconstructedTitle}.md`;
     chrome.runtime.sendMessage({ download: { url, filename: fileName } });
 }
 
@@ -39,7 +40,7 @@ function extractConversation() {
         const contentBase = textBase.childNodes[1].querySelector("div>div>div");
         let author = null;
         if (idx % 2 === 0) {
-            author = "使用者";
+            author = "我";
         } else {
             author = "ChatGPT"
         }
@@ -52,7 +53,8 @@ function extractConversation() {
 
 function run() {
     const conversation = extractConversation();
-    downloadMarkdown(conversation);
+    const title = document.title;
+    downloadMarkdown(conversation, title);
 }
 
 // 執行
